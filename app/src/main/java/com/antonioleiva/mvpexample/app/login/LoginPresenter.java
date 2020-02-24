@@ -19,13 +19,14 @@
 package com.antonioleiva.mvpexample.app.login;
 
 public class LoginPresenter implements LoginInteractor.OnLoginFinishedListener {
-
-    private LoginView loginView;
+    //虽然传入的是activiy，Presenter不能持有Activity的引用，不然Presenter的权利太大
+    //不能使用private LoginActivity loginView;
+    private ILoginView loginView;
     private LoginInteractor loginInteractor;
 
-    LoginPresenter(LoginView loginView, LoginInteractor loginInteractor) {
-        this.loginView = loginView;
-        this.loginInteractor = loginInteractor;
+    LoginPresenter(ILoginView loginView, LoginInteractor loginInteractor) {
+        this.loginView = loginView;//view 传入LoginActivity，但这里只能用接口，不能让presenter使用activity的实例
+        this.loginInteractor = loginInteractor;//model
     }
 
     public void validateCredentials(String username, String password) {

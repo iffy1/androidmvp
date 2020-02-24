@@ -18,7 +18,7 @@
 
 package com.antonioleiva.mvpexample.app.login;
 
-public interface LoginView {
+public interface ILoginView {
     void showProgress();
 
     void hideProgress();

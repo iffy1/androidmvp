@@ -28,7 +28,7 @@ import android.widget.ProgressBar;
 import com.antonioleiva.mvpexample.app.R;
 import com.antonioleiva.mvpexample.app.main.MainActivity;
 
-public class LoginActivity extends AppCompatActivity implements LoginView {
+public class LoginActivity extends AppCompatActivity implements ILoginView {
 
     private ProgressBar progressBar;
     private EditText username;
